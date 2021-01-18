@@ -30,3 +30,51 @@ arrSum = function(arr){
         0);
 }
 
+//return the biggest numbers from an array
+function largestOfFour(arr) {
+var result =[];
+for (let i = 0; i<arr.length; i++){
+  var largeArr= arr[i][0];
+  for (let j =1; j< arr[i].length; j++){
+    if (arr[i][j] > largeArr){
+      largeArr= arr[i][j];
+    }
+  }
+  result[i]= largeArr;
+}
+  return result;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+//check if a   ends with a specified word. negative length menas its going to start fromend and not start like it would normally do.
+function confirmEnding(str, target) {
+  return str.slice(-target.length)=== target;
+}
+
+confirmEnding("Bastian", "n");
+
+//repeating a string 
+function repeatStringNumTimes(str, num) {
+  var rstr= ""
+  while (num > 0){
+    rstr = rstr+ str;
+    num--;
+  }
+
+  return rstr;
+}
+
+repeatStringNumTimes("abc", 3);
+//truncating a string 
+function truncateString(str, num) {
+  if (str.length > num){
+    return str.slice(0, num) + "..."
+    
+  }else{
+    return str;
+  }
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
