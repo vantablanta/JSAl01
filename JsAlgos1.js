@@ -121,4 +121,40 @@ return arr.filter(element => Boolean(element) === true)
 }
 bouncer([7, "ate", "", false, 9]);
 
+//sort an array,insert a number and find the index of that number.
+function getIndexToIns(arr, num) {
+  if (arr.indexOf(num)  === -1){
+    arr.push(num);
+  }
+  let newArr= arr;
+  newArr.sort(
+    function(a,b){
+    return a-b
+    })
+    return newArr.indexOf(num);
+}
+getIndexToIns([40, 60], 50);
 
+//checking if string in first elemnt matches string in scond element of array
+function mutation(arr) {
+  let elem1= arr[0].toLowerCase();
+  let elem2= arr[1].toLowerCase();
+
+  for (let i = 0; i < elem2.length; i++){
+   let match = elem1.indexOf(elem2[i])
+    if (match === -1){
+    return false
+    }
+  }
+  return true;
+}
+mutation(["hello", "hey"]);
+
+function chunkArrayInGroups(arr, size) {
+  var group = [];   
+  while (arr.length > 0) {
+   group.push(arr.splice(0, size));
+ }
+ return group;
+}
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
