@@ -97,5 +97,28 @@ function booWho(bool) {
 }
 booWho(null);
 
+//strings with mixed cases chnaged to have each word capitalized
+function titleCase(str) {
+  let words1 = str.toLowerCase()
+  let words = words1.split(" ");
+  for (let i = 0; i < words.length; i++){
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+  };
+  return words.join(" ")
+}
+titleCase("I'm a little tea pot");
+
+//copying into array into another without chnaging its contents 
+function frankenSplice(arr1, arr2, n) {
+  let arrays= arr2.slice();
+  arrays.splice(n, 0, ...arr1)
+  return arrays;
+}
+ frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+function bouncer(arr) {
+return arr.filter(element => Boolean(element) === true)
+}
+bouncer([7, "ate", "", false, 9]);
 
 
